@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {
     connect
 } from 'react-redux';
-export default {chileComponent} => {
-    class Composed extends Component {
+export default ChildComponent => {
+    class ComposedComponent extends Component {
         componentDidMount() {
             this.shouldNavigateAway();
         }
@@ -16,7 +16,7 @@ export default {chileComponent} => {
             }
         }
         render() {
-            return <CommentBox/>
+            return <ChildComponent {...this.props}/>
         }
     }
     function mapStateToProps(state) {
