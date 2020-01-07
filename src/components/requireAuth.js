@@ -5,9 +5,11 @@ import {
 export default ChildComponent => {
     class ComposedComponent extends Component {
         componentDidMount() {
+            debugger
             this.shouldNavigateAway();
         }
         componentDidUpdate() {
+            debugger
             this.shouldNavigateAway();
         }
         shouldNavigateAway() {

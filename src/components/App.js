@@ -34,16 +34,14 @@ import * as actions from 'actions';
             </ul>
         )
     }
-render(){
-   
+    render(){  
     return (
             <div>
                 {this.renderHeader()}
                  <Route path="/post" component={CommentBox}></Route> 
                  <Route path="/" exact  component={CommentList}></Route> 
 
-            </div>
-     
+            </div>    
     );
 }
     

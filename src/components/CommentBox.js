@@ -1,11 +1,7 @@
-import React, {
-    Component
-} from 'react';
-import {
-    connect
-} from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import * as actions from 'actions';
-import  requireAuth from 'components/requireAuth';
+import requireAuth from 'components/requireAuth';
 
 
 class CommentBox extends Component {
@@ -13,7 +9,7 @@ class CommentBox extends Component {
     state = {
         comment: ''
     }
-    
+
     handleChange = (e) => {
         this.setState({
             comment: e.target.value
@@ -33,31 +29,17 @@ class CommentBox extends Component {
 
     render() {
         console.log(this.props)
-        return ( <
-            div >
-            <
-            form onSubmit = {
-                this.handleSubmit
-            } >
-            <
-            h4 > Add a Comment < /h4> <
-            textarea value = {
-                this.state.comment
-            }
-            onChange = {
-                this.handleChange
-            }
-            /> <
-            div >
-            <
-            button > Submit Comment < /button> <
-            /div> <
-            /form> <
-            button className = "fetch-comments"
-            onClick = {
-                this.props.fetchComments
-            } > Fetch Comment < /button> <
-            /div>
+        return (
+            <div>
+                <form onSubmit={this.handleSubmit} >
+                    <h4> Add a Comment </h4>
+                    <textarea value={this.state.comment} onChange={this.handleChange} />
+                    <div>
+                        <button> Submit Comment </button>
+                    </div>
+                </form>
+                <button className="fetch-comments" onClick={this.props.fetchComments} > Fetch Comment </button>
+            </div>
 
         )
     }
