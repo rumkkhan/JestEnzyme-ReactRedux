@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import {
-    connect
-} from 'react-redux';
-export default ChildComponent => {
+import {connect} from 'react-redux';
+export default (ChildComponent) => {
     class ComposedComponent extends Component {
         componentDidMount() {
             debugger

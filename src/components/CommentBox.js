@@ -10,6 +10,8 @@ class CommentBox extends Component {
         comment: ''
     }
 
+    //Our component just  got rendered
+   
     handleChange = (e) => {
         this.setState({
             comment: e.target.value
@@ -26,24 +28,26 @@ class CommentBox extends Component {
         });
 
     }
-
+  
     render() {
         console.log(this.props)
         return (
-            <div>
+            <div>        
                 <form onSubmit={this.handleSubmit} >
-                    <h4> Add a Comment </h4>
+                    <h4>Add a Comment </h4>
                     <textarea value={this.state.comment} onChange={this.handleChange} />
                     <div>
                         <button> Submit Comment </button>
                     </div>
                 </form>
-                <button className="fetch-comments" onClick={this.props.fetchComments} > Fetch Comment </button>
+                <button className="fetch-comments" onClick={this.props.fetchComments}> Fetch Comment </button>
             </div>
-
         )
     }
 }
 
+function mapStateToProps(state){
+  return  { auth: state.auth}
+}
 
-export default connect(null, actions)(requireAuth(CommentBox));
+export default connect(mapStateToProps, actions)(requireAuth(CommentBox));
