@@ -13,7 +13,7 @@ export default ({children, initialState={}})  => {
     )
     return (
         <Provider store={store}>
-            {children}
+          {children}
         </Provider> 
     )
 }
